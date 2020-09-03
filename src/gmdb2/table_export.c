@@ -216,7 +216,7 @@ gmdb_print_col(FILE *outfile, gchar *col_val, int quote_text, int col_type, int 
 			} else if (is_binary_type(col_type) && *col_val <= 0 && bin_mode == MDB_BINEXPORT_OCTAL)
 				fprintf(outfile, "\\%03o", *(unsigned char*)col_val++);
 			} else if (is_binary_hex_col)
-				fprintf(outfilt, "%02X", *(unsigned char*)col_val++);
+				fprintf(outfile, "%02X", *(unsigned char*)col_val++);
 			else
 				putc(*col_val++, outfile);
 		}
